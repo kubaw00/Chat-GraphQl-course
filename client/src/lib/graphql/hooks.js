@@ -9,9 +9,6 @@ export function useAddMessage() {
       data: { message },
     } = await mutate({
       variables: { text },
-      update: (cache, { data }) => {
-        const newMessage = data.message;
-      },
     });
     return message;
   };
