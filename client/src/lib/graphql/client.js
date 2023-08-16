@@ -30,6 +30,7 @@ const httpLink = concat(
 const wsLink = new GraphQLWsLink(
   createWSClient({
     url: 'ws://localhost:9000/graphql',
+    connectionParams: () => ({ accessToken: getAccessToken() }),
   })
 );
 
